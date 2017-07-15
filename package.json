@@ -1,0 +1,19 @@
+{
+  "name": "rupeek",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "async": "^2.0.1",
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "~1.15.1",
+    "cookie-parser": "~1.4.3",
+    "crypto": "0.0.3",
+    "ejs": "*",
+    "express": "~4.13.4",
+    "fs": "0.0.1-security",
+    "xmljson": "^0.2.0"
+  }
+}

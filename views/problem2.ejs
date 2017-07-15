@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDR3oCguaBRuzZal99I_A_FkNiPZQKkrlM"
+    ></script>
+  
+</head>
+<body>
+  <div id="map" style="width: calc(100vw - 40px);height: calc(100vh - 40px);margin: 15px;"></div>
+  <script>
+    function initMap() {
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 10,
+        center: {lat: 13.2324780, lng: 77.6928870},
+        mapTypeId: 'terrain'
+      });
+
+      var flightPlanCoordinates = <%- data %>;
+      var flightPath = new google.maps.Polyline({
+        path: flightPlanCoordinates,
+        geodesic: true,
+        strokeColor: '#FF0000',
+        strokeOpacity: 1.0,
+        strokeWeight: 3
+      });
+
+      flightPath.setMap(map);
+    }
+    initMap();
+  </script>
+</body>
+</htm>
